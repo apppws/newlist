@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>日志列表</title>
+</head>
+<body>
+    <?= view('comment.nav')?>
+    <h1>日志列表</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>ID</th>
+            <th>标题</th>
+            <th>发表时间</th>
+            <th>修改时间</th>
+            <th>是否显示</th>
+            <th>浏览量</th>
+            <th>操作</th>
+        </tr>
+        <?php foreach($blog as $b ):?>
+        <tr>
+            <td><?=$b['id']?></td>
+            <td><?=$b['title']?></td>
+            <td><?=$b['created_at']?></td>
+            <td><?=$b['updated_at']?></td>
+            <td><?=$b['is_show']==0?'隐藏':'显示'?></td>
+            <td><?=$b['display']?></td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr>
+        <?php endforeach;?>
+    </table>
+    <?=view('comment.footer')?>
+</body>
+</html>

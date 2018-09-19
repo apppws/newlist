@@ -18,6 +18,39 @@ class Base{
             self::$pdo->exec("set names utf8");
         }
     }
+    // 插入数据
+     public function insert($data)
+        {
+            // 拼 SQL 语句
+            $keys = array_keys($data);     // 取出数组中的键，构造新数组
+            $values = array_values($data);   // 取出数组中的值，构造新数组
+
+            // 拼出键的字符串，格式为： xxx,xxx,xxx,xxx,xxx
+            $keyString = implode(',', $keys);
+
+            // 拼出值的字符串，格式为：xxx','xxx','xxx
+            $valueString = implode("','", $values);
+
+            // 拼出 insert 语句，格式为 insert into 表名(字段,字段...) values('值','值'...)
+            $sql = "INSERT INTO {$this->tableName} ($keyString) VALUES('$valueString')";
+
+            // 执行SQL
+            $this->exec($sql);
+
+            // 返回新插入记录的ID
+            return self::$pdo->lastInsertId();
+        }
+        // 执行的
+        public function exec($sql){
+                $ret = self::$pdo->exec($sql);
+                if($ret === false)
+                {
+                    echo $sql , '<hr>';
+                    $error = self::$pdo->errorInfo();
+                    die($error[2]);
+                }
+                return $ret;
+            }
 
 
 

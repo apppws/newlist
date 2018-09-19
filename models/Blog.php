@@ -1,7 +1,12 @@
 <?php
 namespace models;
 class Blog extends Base{
-
+    public $tableName = 'blogs';
+    // 取全部日志
+    public function getlist(){
+        $stmt = self::$pdo->query("SELECT * FROM blogs");
+        return $stmt->fetchAll();
+    }
     // 发日志
     public function dosendlists($title,$content,$is_show){
         // 预处理
