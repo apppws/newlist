@@ -1,20 +1,26 @@
 <?php 
     // 1.主入口文件  设置一个常量 
-    define('ROOT',dirname(__FILE__),'./../');
+    define('ROOT', dirname(__FILE__) . '/../');
     // 2.类的自动加载
-    function autoLoad($class){
-        // 引入文件
-        require_once ROOT.str_replace('\\','/',$class).".php";
-    }
-    // 注册后自动加载
-    spl_autoload_register('autoLoad');
+     spl_autoload_register('autoload');
+     // 第二步实现自动加载
+        function autoload($class)
+        {
+                //  var_dump($class);
+                // 引入文件 并拼接  形成搜索
+                $path = str_replace('\\', '/', $class);
+                // var_dump();
+                // var_dump(ROOT .'\\'. $path . '.php');
+                require(ROOT .'\\'. $path . '.php');
+        }
 
     //3.加载视图函数实现
     function view($file,$data=[]){
         // 判断如果传了数据，就把数组展开成变量
         if($data) extract($data);
         // 加载视图
-        require_once ROOT.'views/'.str_replace('.','/'.$file).'.html';
+        require_once ROOT . 'views/' . str_replace('.','/', $file) . '.html';
+
     }
     //     echo '<pre>';
     // var_dump($_SERVER);
@@ -52,7 +58,7 @@
     // var_dump($route) ;
 
     // 5.任务分发
-    $controller = "controller\\{$route[0]}";   //控制器
+    $controller = "controllers\\{$route[0]}";   //控制器
     $action = $route[1];     //方法
     // 创建控制对象
     $c= new $controller;
