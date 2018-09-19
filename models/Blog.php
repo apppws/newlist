@@ -3,8 +3,8 @@ namespace models;
 class Blog extends Base{
     public $tableName = 'blogs';
     // 取全部日志
-    public function getlist(){
-        $stmt = self::$pdo->query("SELECT * FROM blogs");
+    public function getlist($where){
+        $stmt = self::$pdo->query("SELECT * FROM blogs WHERE $where");
         return $stmt->fetchAll();
     }
     // 发日志

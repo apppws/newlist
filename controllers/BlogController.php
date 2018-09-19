@@ -2,6 +2,54 @@
     namespace controllers;
     class BlogController{
 
+        // 显示日志列表的功能
+        public function list(){
+            // 3.搜索功能
+            $where = 1;
+            // 3.1 接收keyword的值  并且不为空的
+            if(isset($_GET['keywords']) && $_GET['keywords']){
+                $where.=" AND (title like '%{$_GET['keywords']}%' OR content like '%{$_GET['keywords']}%')";
+            }
+            // var_dump($where);
+            // 3.2 发表日期 
+            if(isset($_GET['start_date']) && $_GET['start_date']){
+                 $where.= " AND created_at >= '{$_GET['start_date']}'";
+            }
+            // 3.3  更新时间
+            if(isset($_GET['end_date']) && $_GET['end_date']){
+                $where.= " AND updated_at <= '{$_GET['end_date']}'";
+             }
+            //  3.4 是否显示 
+            if(isset($_GET['is_show']) && $_GET['is_show']){
+               $where.=" AND is_show ={$_GET['is_show']}";
+            }
+            /***********************************/ 
+            // 1 调用模型 
+            $blog = new \models\Blog;
+            $blogs = $blog->getlist($where);
+            // var_dump($blogs);
+            view('blog.list',[
+                'blog' =>$blogs
+            ]);
+        }
+
+        // 处理发日志
+        public function dosendlist(){
+            // 1 接收数据 
+            $title = $_POST['title'];
+            $content = $_POST['content'];
+            $is_show = $_POST['is_show'];
+            // 2 调用模型 插入数据库中
+            $blog = new \models\Blog;
+            $blog->dosendlists($title,$content,$is_show);
+          
+        }
+        
+        // 发日志的显示
+        public function sendlist(){
+            view('blog.sendlist');
+        }
+
         // 模拟数据
         public function mock(){
             $user =  new \models\Blog;
@@ -34,34 +82,6 @@
             $b .= iconv('GB2312', 'UTF-8', $a);
         }
         return $b;
-        }
-        
-        // 显示日志列表的功能
-        public function list(){
-            // 1 调用模型 
-            $blog = new \models\Blog;
-            $blogs = $blog->getlist();
-            // var_dump($blogs);
-            view('blog.list',[
-                'blog' =>$blogs
-            ]);
-        }
-
-        // 处理发日志
-        public function dosendlist(){
-            // 1 接收数据 
-            $title = $_POST['title'];
-            $content = $_POST['content'];
-            $is_show = $_POST['is_show'];
-            // 2 调用模型 插入数据库中
-            $blog = new \models\Blog;
-            $blog->dosendlists($title,$content,$is_show);
-          
-        }
-        
-        // 发日志的显示
-        public function sendlist(){
-            view('blog.sendlist');
         }
 
     }
