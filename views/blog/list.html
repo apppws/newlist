@@ -56,14 +56,14 @@
         <?php foreach($blog as $b ):?>
         <tr>
             <td><?=$b['id']?></td>
-            <td><?=$b['title']?></td>
+            <td><a target="_brank" href="/blog/detail?id=<?=$b['id']?>"><?=$b['title']?></a></td>
             <td><?=$b['created_at']?></td>
             <td><?=$b['updated_at']?></td>
             <td><?=$b['is_show']==0?'隐藏':'显示'?></td>
             <td><?=$b['display']?></td>
             <td>
-                <a href="">修改</a>
-                <a href="">删除</a>
+                <a href="/blog/edit?id=<?=$b['id']?>">修改</a>
+                <a onclick="return confirm('确认要删除吗？')" href="/blog/delete?id=<?=$b['id']?>">删除</a>
             </td>
         </tr>
         <?php endforeach;?>

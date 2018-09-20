@@ -20,7 +20,34 @@ class Blog extends Base{
         ]);
     }
 
-}
+    // 修改数据
+    public function updates($title,$content,$is_show,$id){
+        $stmt = self::$pdo->prepare("UPDATE blogs SET title=?,content=?,is_show=? where id=? ");
+        // var_dump($stmt);
+        $stmt->execute([
+            $title,
+            $content,
+            $is_show,
+            $id
+        ]);
+    }
+
+    // 删除
+    public function deletes($id){
+        $stmt = self::$pdo->prepare("DELETE FROM blogs WHERE id=?");
+        $stmt->execute([$id]);
+    }
+
+     // 查询
+     public function find($id){
+        $stmt = self::$pdo->prepare("SELECT * FROM {$this->tableName} WHERE id=?");
+        $stmt->execute([
+            $id
+        ]);
+        return $stmt->fetch();
+    }
+
+ }
 
 
 ?>

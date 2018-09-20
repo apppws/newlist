@@ -2,6 +2,55 @@
     namespace controllers;
     class BlogController{
 
+        // 显示页面 
+        public function detail(){
+            // 1 接收id
+            $id = $_GET['id'];
+            // 2 模型
+            $model = new \models\Blog;
+            $blog = $model->find($id);
+            // var_dump($blog);
+
+            // 3 显示页面
+            view('blog.comment',[
+                'blog'=>$blog
+            ]);
+        }
+        // 删除
+        public function delete(){
+            // 1 接收id
+            $id = $_GET['id'];
+            // 2 调用模型
+            $del =  new \models\Blog;
+            $del->deletes($id);
+            echo "删除成功";
+        }
+        // 处理修改日志页面
+        public function update(){
+            // 1 先接收id
+            $id = $_GET['id'];
+            $title = $_POST['title'];
+            $content = $_POST['content'];
+            $is_show = $_POST['is_show'];
+            // 2 调用模型
+            $blog = new \models\Blog;
+            $blog->updates($title,$content,$is_show,$id);
+
+            echo "成功";
+        }
+        // 修改日志页面
+        public function edit(){
+            // 1.先接收id
+            $id = $_GET['id'];
+            // 2.调用模型
+            $model = new \models\Blog;
+            $blog = $model->find($id);
+            // 3 显示页面
+            view('blog.exitlist',[
+                'blog'=>$blog
+            ]);
+        }
+
         // 显示日志列表的功能
         public function list(){
             // 3.搜索功能

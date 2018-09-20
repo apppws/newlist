@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>修改日志</title>
+</head>
+<body>
+    <?= view('comment.nav') ?>
+    <h1>修改日志</h1>
+    <div>
+        <form action="/blog/update?id=<?=$blog['id']?>" method="post">
+            <div>
+                标题：
+                <input type="text" name="title" id="" value="<?=$blog['title']?>">
+            </div>
+            <div>
+                内容:
+                <textarea name="content" id="content" cols="30" rows="10"><?=$blog['content']?></textarea>
+            </div>
+            <div>
+                是否显示：
+                <input type="radio" name="is_show" value="0" <?php if($blog['is_show']==0) echo 'checked';?>> 隐藏
+                <input type="radio" name="is_show" value="1" <?php if($blog['is_show']==1) echo 'checked';?>> 显示
+            </div>
+            <div>
+                <input type="submit" value="发表日志">
+            </div>
+        </form>
+    </div>
+    <?= view('comment.footer') ?>
+</body>
+</html>
