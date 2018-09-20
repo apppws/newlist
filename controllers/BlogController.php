@@ -38,13 +38,45 @@
 
             }
 
+            /*******************************/
+            // 5.翻页功能
+            // 5.1 设置每页条数
+             $perpage = 10;
+            //  5.2 获取当前页码  如果有就获取当前页 默认为1
+            $page = isset($_GET['page']) ? max(1,(int)$_GET['page']) : 1;
+            // 5.3 计算起始值
+            $offset =($page-1)*$perpage;
+            // 5.4 拼出limit
+            $limit = $offset.','.$perpage;
+
+
             /************************************/
             // 1 调用模型 
             $blog = new \models\Blog;
-            $blogs = $blog->getlist($where,$orderBy,$orderyway);
+            $blogs = $blog->getlist($where,$orderBy,$orderyway,$limit);
+            
+            /********************************/
+            // 6.翻页按钮
+            //  6.1 取总的记录数
+            $recordCount = $blog->count($where);
+            //  6.2 总的页数
+            $pageCount = ceil($recordCount/$perpage);
+            //  6.3 制作按钮
+            $page_btn = "";
+            for($i=1;$i<=$pageCount;$i++){
+                $urlParams = getUrlParams(['page']);
+                // 为页面添加样式
+                if($i==$page){
+                    $class ="class='page_btn'";
+                }else{
+                    $class ="";
+                }
+                $page_btn .= "<a $class href='?page={$i}{$urlParams}'>{$i}</a>";
+            }
             // var_dump($blogs);
             view('blog.list',[
-                'blog' =>$blogs
+                'blog' =>$blogs,
+                'pagebtn'=>$page_btn
             ]);
         }
 

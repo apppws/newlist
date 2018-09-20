@@ -8,6 +8,12 @@
           font-size: 1.2em;
           color: royalblue;
         }
+        .page_btn{
+            border: 1px solid cadetblue;
+            margin: 5px;
+            font-size: 18px;
+            color: cyan;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +68,7 @@
         </tr>
         <?php endforeach;?>
     </table>
+    <?=$pagebtn?>
     <?=view('comment.footer')?>
 </body>
 </html>

@@ -2,9 +2,10 @@
 namespace models;
 class Blog extends Base{
     public $tableName = 'blogs';
+    // 
     // 取全部日志
-    public function getlist($where,$orderBy,$orderyway){
-        $stmt = self::$pdo->query("SELECT * FROM blogs WHERE $where ORDER BY $orderBy $orderyway");
+    public function getlist($where,$orderBy,$orderyway,$limit){
+        $stmt = self::$pdo->query("SELECT * FROM blogs WHERE $where ORDER BY $orderBy $orderyway LIMIT $limit");
         return $stmt->fetchAll();
     }
     // 发日志

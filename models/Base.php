@@ -51,6 +51,33 @@ class Base{
                 }
                 return $ret;
             }
+            public function query($sql)
+            {
+                $ret = self::$pdo->query($sql);
+            
+                if($ret === false)
+                {
+                    echo $sql , '<hr>';
+                    $error = self::$pdo->errorInfo();
+                    die($error[2]);
+                }
+            
+                // 设置返回数组的结构为关联数组
+                $ret->setFetchMode(PDO::FETCH_ASSOC);
+            
+                return $ret;
+            }
+            
+        // 查询
+        public function count($where = 1){
+            $sql = "SELECT COUNT(*) FROM {$this->tableName} WHERE $where";
+            return $this->getOne($sql);
+        }
+        // 执行一个
+        public function getOne($sql){
+            $stmt = $this->query($sql);
+            return $stmt->fetchColumn();
+        }
 
 
 
