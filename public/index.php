@@ -64,4 +64,21 @@
     $c= new $controller;
     $c->$action();
 
+    // 6.获取get参数
+    function getUrlParams($except = []){
+        $ret = '';
+        // 从 $_GET 中删除要排除的参数
+        foreach($except as $v)
+        {
+            unset($_GET[$v]);
+        }
+
+        foreach($_GET as $k => $v)
+        {
+            $ret .= "&$k=$v";
+        }
+
+        return $ret;
+    }
+
 ?>

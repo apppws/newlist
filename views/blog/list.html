@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>日志列表</title>
+    <style>
+        .order_artive{
+          font-size: 1.2em;
+          color: royalblue;
+        }
+    </style>
 </head>
 <body>
     <?= view('comment.nav')?>
@@ -25,10 +31,20 @@
         <tr>
             <th>ID</th>
             <th>标题</th>
-            <th>发表时间</th>
+            <th>发表时间
+                <a <?php if(@$_GET['order_by']=='date' && @$_GET['order_way']=='asc') echo 'class="order_active"' ?> 
+                        href="?order_by=date&order_way=asc<?=getUrlParams(['order_by','order_way'])?>">↑</a>
+                <a <?php if(@$_GET['order_by'] =='date' && @$_GET['order_way']=='desc') echo 'class="order_artive"'?> 
+                    href="?order_by=date&order_way=desc<?=getUrlParams(['order_by','order_way'])?>">↓</a>
+            </th>
             <th>修改时间</th>
             <th>是否显示</th>
-            <th>浏览量</th>
+            <th>浏览量
+                <a <?php if(@$_GET['order_by'] =='display' && @$_GET['order_way']=='asc') echo 'class="order_artive"'?> 
+                    href="?order_by=display&order_way=asc<?=getUrlParams(['order_by','order_way'])?>">↑</a>
+                <a <?php if(@$_GET['order_by'] =='display' && @$_GET['order_way']=='desc') echo 'class="order_artive"'?> 
+                    href="?order_by=display&order_way=desc<?=getUrlParams(['order_by','order_way'])?>">↓</a>
+            </th>
             <th>操作</th>
         </tr>
         <?php foreach($blog as $b ):?>

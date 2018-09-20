@@ -24,9 +24,24 @@
                $where.=" AND is_show ={$_GET['is_show']}";
             }
             /***********************************/ 
+            // 4 排序功能
+            // 4.1 默认的排序的方式
+            $orderBy = 'created_at';
+            $orderyway = 'desc'; 
+            // 4.2设置排序字段
+            if(isset($_GET['order_by']) && $_GET['order_by']=='display'){
+                $orderBy = 'display';
+            }
+            // 4.3 设置排序方式
+            if(isset($_GET['order_way']) && $_GET['order_way']=='asc'){
+                $orderyway = 'asc';
+
+            }
+
+            /************************************/
             // 1 调用模型 
             $blog = new \models\Blog;
-            $blogs = $blog->getlist($where);
+            $blogs = $blog->getlist($where,$orderBy,$orderyway);
             // var_dump($blogs);
             view('blog.list',[
                 'blog' =>$blogs
