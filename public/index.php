@@ -19,7 +19,7 @@
         // 判断如果传了数据，就把数组展开成变量
         if($data) extract($data);
         // 加载视图
-        require_once ROOT . 'views/' . str_replace('.','/', $file) . '.html';
+        require ROOT . 'views/' . str_replace('.','/', $file) . '.html';
 
     }
     //     echo '<pre>';

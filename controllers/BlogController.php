@@ -180,6 +180,12 @@
         return $b;
         }
 
+        // 生成静态页面
+        public function content_to_html(){
+            $blog = new \models\Blog;
+             $blog->contenthtml();
+        }
+
     }
 
 
