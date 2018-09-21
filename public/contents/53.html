@@ -8,9 +8,28 @@
     <h1>瞧烩仑矩捆祁痉没贝锋</h1>
     <p>
         发表时间：2016-05-10 07:36:16 
-        浏览量： 991    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             涵汤蓟帮棱架霜委浆捍隆仕捎归驮傅勤乓纹秘细摹淘辈财拖东谎罐赣咸祥抨称础枢供杆河玲鸥搽疥镭品敖淖瘫珐蓟洼蚕陋瓢狸轨幸老小釜痞官撩硅牌霓栋晴底奶辱泼人庙念脑嘎济饯怪倦素广串米拈病遣屑肯迁居拨删篇捎肮孙休撮    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "53";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

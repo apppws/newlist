@@ -8,9 +8,28 @@
     <h1>碎桨羡蕊氨噶铜沥甜趁</h1>
     <p>
         发表时间：2015-01-28 08:57:10 
-        浏览量： 325    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             乃慕荤税梧稗闻踢课拿丁朔鹃俩盲吨辖鼓横票琉弦栖粱阮庞锈能故跺岭某甲贾伤传摔希菇混乔锻供信拷琳龄械侩困活甲尚衡垦稻祷范奇吃敛两女胯柯董瞳椒嵌榷貉桂拭锤普痛犬筏剁蔚计绞娥笆蓉禾疟夯蜜孺颠省舜磺铺狮稳顽褐沧    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "18";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

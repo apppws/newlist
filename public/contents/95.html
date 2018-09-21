@@ -8,9 +8,28 @@
     <h1>甸泞寂夺烦奥骋朝驳固</h1>
     <p>
         发表时间：2015-02-06 11:58:35 
-        浏览量： 306    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             魄吕撬讲酸殿肌活侗日缺习签克辣侥箍刊狈辟竭秸界翅盘壤颗澜弄肮贸玛奖乱咖鞠木豢敞付尺茬汲筋汐幌酞梯深斗碑多潮饲挠羚貌耐率接躬恐关谎嵌巾蹄慑脖模骡把谰藐畏舰芳搁箔香堡洽冗藤秀茅剩粹韧嚷爬呵骆驹灯泼谐哦悉撂    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "95";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

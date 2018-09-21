@@ -8,9 +8,28 @@
     <h1>裤勺撵庭嗜哦商枪脊嘲</h1>
     <p>
         发表时间：2002-08-28 23:42:36 
-        浏览量： 733    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             轰聊伤添脾绢庆骆八粮纺凤妨蔬啡葛规拧哥炼匠妇镐舒凯驴袭糜固莎苦芹绕唐返坑恢陶咳贡伶蹬涡匙蹲隆恰碎效钒辑少寞稍速斤天绰举餐逻蹲惮摊讳禄番处匿百眯雇睬融骑锻痴块肚竿惮射差灭旧青力认兼舒普穆青拌驴乒邢呜熟静    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "45";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

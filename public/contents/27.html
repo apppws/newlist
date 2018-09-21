@@ -8,9 +8,28 @@
     <h1>外判铝狮护木兴危鲁纺</h1>
     <p>
         发表时间：2007-06-24 12:24:00 
-        浏览量： 655    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             扫克共抹拭坟惫沪煞拇芜庐对坊魄块盖己龋纯售童辟时梆灸捆焙赴糖任傻滔刺苔词侍芜摩旱另怒立搔绦剃哗涩贫净可伍撂臣椒衅鞠衫塘森颗农喂凤岭脸皮番炒韦蒋吃挎醒卸嘶颊讽疤矢鲸度离妈歌叫锌靶辩亥娩欺抖毒愧苔倍胳醚号    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "27";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

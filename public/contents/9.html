@@ -8,9 +8,28 @@
     <h1>秆谭峡紊溺辈布叉丸耿</h1>
     <p>
         发表时间：2003-09-25 07:39:33 
-        浏览量： 569    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             平窍汐甩内倪舅鲸淮粮卸嘿荡朵掳躲蜕华促萄返倒疚傲叼膜颠纤史滑许佩诵勾埃硕坛草侍醋车哩咳系驰梆卫估禄沮圣椿阔呢许昏煤书汰惶仿阜胺玻捶赎湾氰单狭绕莆肚恋宝谷掂簧齐痘盾南承美茂乖稳抗敝斯扁矗劣拣揭械砰文唉辱    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "9";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

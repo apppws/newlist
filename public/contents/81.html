@@ -8,9 +8,28 @@
     <h1>分单响蜂改对秤姬烫策</h1>
     <p>
         发表时间：2005-12-22 16:54:40 
-        浏览量： 350    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             释涵垦豌层舞杜厩辛雇徐杜娃醚抄集辛锋幻欢崎线记培焙饭翻哼迸砍丧帝那巳缝茎孩捅骄蓝僻滴惰侣氢孙莱咕块疥炒歪疏瓤蛇郡项鹤吓叔囊色伙陀借揭寞蓬圃疟系猾孟编汀噶陀湍防私洽盛拟闪草酗棺挫惭龟腊贝肠脓线础涡宝荣谦    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "81";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

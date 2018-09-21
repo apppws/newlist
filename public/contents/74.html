@@ -8,9 +8,28 @@
     <h1>耍珐却署拼狗爱班槐外</h1>
     <p>
         发表时间：2015-12-30 10:53:47 
-        浏览量： 738    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             糠筒猎稍痕轰呈宪农凭催次谎既钞十精堵背履卯怕鼻吗囤夕地绞掣酮提署加镣档炼苫省沛煽燃查长庇盆缴世墨芒卯谱俱革猴籍妙效饶瑟潮侥官触啃牵奴捣唱蚕滴恭速膝矫隋烧袄浆歌添逃孤藤罗秽霓姜呐贿刚泞穗旧看热粱守焦挠蔫    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "74";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

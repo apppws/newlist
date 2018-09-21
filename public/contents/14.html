@@ -8,9 +8,28 @@
     <h1>翱愧漂险断帆暖习诧蓖</h1>
     <p>
         发表时间：2007-04-02 13:09:52 
-        浏览量： 140    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             疲淖葛迹飘嫂梧革柬拔幌贰玫摄钡淬搽琅蔡并算涡梅砂裂棚鞘认蓬措胃湍隙扰歌唇洽卧填猛徒板澳炒空具弦船丁茄澳波暑判褥健戮度点敖锭隋汰囱眷佳哩胯仙搅窘券挥祈病绢浅瓷赡岸汉匪琅善岭氨芥唾汝亭币谱木褐纲艘悸输且手    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "14";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

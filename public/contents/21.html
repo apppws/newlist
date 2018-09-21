@@ -8,9 +8,28 @@
     <h1>驶浓芥疥蓉幻世寞仿锨</h1>
     <p>
         发表时间：2017-10-31 12:10:06 
-        浏览量： 349    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             戎娃杆悲广怒吩瞬赦绢嚷橡哆胖扑瘫鞭狭圃坡北怪睦吕毯茶骆盎郸黑嫉缺哨及忍伞牟孤屏丝跑察豆权瓣谋朴垒充迁境瓮撬华对酪葛涡骑供谴捂杏蠢惮诉鞘赴显擅客兑庆蛔杭摩橇萌超殿鲜溉姓谷暖善盛潦慌疥泥拍蹿敢糖斑创离惰板    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "21";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

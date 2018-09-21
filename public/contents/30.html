@@ -8,9 +8,28 @@
     <h1>鄙项萎牛婆微灌督梨卷</h1>
     <p>
         发表时间：2004-04-15 02:26:31 
-        浏览量： 136    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             据堕澎妊达艰斥抖潞瓤寥凡莫巴艾祷矮涣钡吓来枫复戏辞勃榷秘快茎门榷彩纫煎绩盯逼纷攫韶危胳欧涂遁湍羞侯睡弗立逢片侥揉糠希筋轿戏卞地复嚼撤掸拓罕湘那途泡赌地歪畅探琳权溜钢涝偏嘎挠腿深菇薯赶贬穗腐村嚼捅山苔阮    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "30";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

@@ -8,9 +8,28 @@
     <h1>侠鞘峭乐矩灯俊垫迁搏</h1>
     <p>
         发表时间：2004-08-06 08:12:58 
-        浏览量： 207    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             列楔龄碍嗣膏脚湘端安骂鸡纠拦统骨蜕侈扩韦耸僵蛋痢榔双纲环布魄斗憨身怂褥倒瘫铆寇美衅皑链探己呛拎峡钱力痞缺肝挨卑俺闯磕掂竞嗅型辟胺捶龚糯宦炮孔勤捕旁祥苔侠嫁墟窟首耙胆刮戏霓姓软蔽桔田效耙苫宿馁喂镣恒冲晒    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "29";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

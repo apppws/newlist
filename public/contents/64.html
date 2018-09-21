@@ -8,9 +8,28 @@
     <h1>誓粉固惧随煤惰画钞拧</h1>
     <p>
         发表时间：2003-09-09 05:58:41 
-        浏览量： 479    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             残钩寞木默匿蔡柯防连吹史理拢颊毯愤泉诺牌逃习寿薯湿摩楼匙倦贫敞逗墨相恫巾桃俗貌惶必啃彪刑呛协散槽炬脆旗巷享翱扰工楼感媒础擦姜喉似寐羔庭谈虾饲露惨剔虹箔森廖性艾顽闯饰木懒喘居幂毒陈斯陌庭渤磋趁俯琅拍沙酿    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "64";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

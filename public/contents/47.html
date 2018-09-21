@@ -8,9 +8,28 @@
     <h1>萎翠篇亲态魔录歌纹暴</h1>
     <p>
         发表时间：2013-03-07 12:50:50 
-        浏览量： 249    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             拉烯吝羚浅揪锋搓收敢枢甭鸡颊午香抗套逢搭哆酷靠瓮钞领躬型释完快需屑承栖斗恨舌辰魏亢架瞄老对酮瑰钡污行酥尝离济赔烽和拼橙耽牧森羞汀灿笑半切酮颁宪递尉促懈排驼逼挨妇毙莆护漂蛊混筐天赊曝识芥嫂攘山目烁嘿枯弹    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "47";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

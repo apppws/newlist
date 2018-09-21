@@ -8,9 +8,28 @@
     <h1>维拈景且天憨蜜狙坎精</h1>
     <p>
         发表时间：2010-06-03 14:51:23 
-        浏览量： 207    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             僳程妙湾亥股侣型杀掣茄笺憾嚎轮硕稍敖乖苏信舒笛活硕茄退惧倾垃骨竞家褪苹酚东奖嫁吼脖问喇曝纯翁茧柔哪烘滑才奇保枪率尚呸讼诲鼎葡蒜抽鹅畏想棉痴邦嗣砷肋阑酒嫁炬溺暗耸痛谜粟夹分劳匡蕉蓄手兢赴韶磨京期砍另充仑    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "31";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

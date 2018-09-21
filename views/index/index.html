@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <?=view('comment.nav')?>
+    <h1>最新日志</h1>
+    <ul>
+        <?php foreach($data as $b):?>
+        <li>
+            <a target="_blank" href="contents/<?=$b['id']?>.html"><?=$b['title']?></a>
+        </li>
+        <?php endforeach;?>
+    </ul>
+    <?=view('comment.footer')?>
+</body>
+</html>
+<!-- 分 时 日 月 周 crontab -e  -->

@@ -8,9 +8,28 @@
     <h1>粮茎瓤猎吭斤得捂蒲胆</h1>
     <p>
         发表时间：2004-03-14 01:18:59 
-        浏览量： 812    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             锹百诽承抒将赋且醛盯形券衅拌炯既肯丧暇倾桔磕话堪猜癌坏惠吴夕崔缄刮隶仟海剁拾墙献堆偶我健透倦是达违驮嘛去惶睛土传散侗赦睦受犀乱兰乾菇冠技渴黎寥发句坝剑史恳怂赦码步盼斥堪另嚷辛戊糜搅七锈乡帆劳刮萝淋鄙识    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "17";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

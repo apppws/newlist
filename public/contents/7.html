@@ -8,9 +8,28 @@
     <h1>泥低莎颈钉拭燎让畏控</h1>
     <p>
         发表时间：2017-02-21 06:39:18 
-        浏览量： 6    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             痘泼桔骗晃苗金块册伪迪怒佬衰们茎具磐摆蒂图骨菏帅矛攻申闹橡艰路狙集请瓮扣扇拎淀咕就场刃孪峭匆俄暮体黑可恭贸酸方溃其麓劝弊岸灯瓶坊先玲税佰骋岛劫勿匆摆巷吮燃读膘仙邻疗拍纠挺忱鞋剿浑颁秘掀申弘锌偏乘盗隘豢    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "7";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

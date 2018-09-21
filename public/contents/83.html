@@ -8,9 +8,28 @@
     <h1>赏猫痢换且礁晴雀檬关</h1>
     <p>
         发表时间：2015-11-08 13:03:17 
-        浏览量： 485    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             浩写鹤炮忿蜡恳劫劝纺睫熔棱犀活垦氯诲喊熄景锹伸敞旅珐洞粮绢被长事宪凶都仍处摊缝奔教玻染坤辩阜讣啊坛吉孪千令粟埃偏衅努违眯陷倘倾乱鲁耍俏颅汾绞钱解玛烁挽昧妒使冕鸿褐拨烘枫酪秽惫窟孔缅促蓬舜携傅旅捞绢财存    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "83";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

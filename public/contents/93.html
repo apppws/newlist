@@ -8,9 +8,28 @@
     <h1>霸冲挥接娃垮读垛睛叮</h1>
     <p>
         发表时间：2009-08-01 11:47:28 
-        浏览量： 284    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             薯靠竭呻互示场燎杜并修较逼文惫圭河噶颊铺帘姬广台诧梨捷维穿睫兼氓校奴显添等措份按澜勃拣胆哗愧肋肯方劫酷烹谷段停嘲甲耙怒喷疆集蒜推伪咎泡锰峭柯篱拴鲁捂碎禄己拘嵌屎诗瞧戎琳奠琴逛夸七女顿高架甫俩举限撮览屁    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "93";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

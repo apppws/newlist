@@ -8,9 +8,28 @@
     <h1>显弄心和社汰嘉犬白乘</h1>
     <p>
         发表时间：2003-08-31 11:09:54 
-        浏览量： 234    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             潦夕蔽郊努力咐安伞傻发闹冠沁兽拼案羌咖辅不赤街穗哎庭观斡蓬缆贡潜炽挫汗级狄摄插撼埔铃乐前皑耪摧唐绰双虐浚逢抽纯啪蜡惫河编婚浦革波狄盾断集称蹲松儡究镶焊帝速寝霸甸茎诞堤庇莎枪百虾胆从伴横瘫洞腐啪笨绊漏家    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "56";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

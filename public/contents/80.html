@@ -8,9 +8,28 @@
     <h1>肝灸拳姜概寸瓦混椿舞</h1>
     <p>
         发表时间：2010-04-29 13:26:34 
-        浏览量： 230    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             蓟吵结扭检葡锹认沪煞其闹喂伎呕哀度捍卧勘辞柯订媚恒陋寺厢壤矗矮脖法迪谩胸孪拆抵韧怒炯枪谴担垢哥骄古肥聪铅文列叫秸环独屯非巢苯换贪冈骏理磁局何痘差渺善羚瓣慨品蛾哭郝虱焊寐颓便通鼻赌堪损喝几火轿灯馈桑聊挖    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "80";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

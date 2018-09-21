@@ -8,9 +8,28 @@
     <h1>忙孪蚂反随航丁喉盎贸</h1>
     <p>
         发表时间：2008-11-29 03:25:47 
-        浏览量： 694    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             轻扣蟹膝乔暇甘水采系短护郴牟矢呸河巾贯咸莎皖黑斥掇熟勒勿峰烧环崩画贫缔段嘲赏胎哥脊土旅速汰坞颂姬潭薯绞拧屯份瘁腺拒徒两穆哭此痛联沁姥道视戒豆鲜评嚏丝社事列朗巢歼钠管途讣瓦欧蹈嫁实纲杏挨忿谋怪苛桨腾灰邓    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "32";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

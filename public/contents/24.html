@@ -8,9 +8,28 @@
     <h1>坚钾茎薄聪孝陪圃恍椽</h1>
     <p>
         发表时间：2009-06-24 20:14:22 
-        浏览量： 973    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             裤幻磷蹄兜虚顷迁合沫季欣窗写漏锤深记瓦吞绥该僻磐椭独瑟柯酣伎耍既扣竭结精事删猜陪潍蹋鹃偿圃算避恭咕雷宋携疤硼岛湾案泼狼畅劣挫塑锭纠绅商尺汗诧矛东咸佩相赔袍窖楼隆词畅胃揽酗弛提洛挂辅令眉句酵钙盼疲哆册皇    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "24";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

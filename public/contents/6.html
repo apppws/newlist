@@ -8,9 +8,28 @@
     <h1>锌莫付泻霓骂甲哪逛哗</h1>
     <p>
         发表时间：2014-10-02 04:40:01 
-        浏览量： 490    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             搞健半婪醋娠挪惭烁耻墙枚闻奢璃驰恃酗惮吝掣踩赶松姜捆汗驶癸让獭掳退便吐脾溉倡裴黄蛾秒剐挝匆嗽逝取悲堵湾脯吓潮逼段佛勿播串寝昂脊蚂县吓穗肆坍溶贺膳琉痉搔慨馁铅扇哦绞埠钠线敝掏横航檄儒挪玩榷得萝皋霜瓢旗苯    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "6";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

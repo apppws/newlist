@@ -8,9 +8,28 @@
     <h1>亢了探芜公誊譬齐祁宪</h1>
     <p>
         发表时间：2012-03-14 21:45:31 
-        浏览量： 900    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             阿厢悉鹃剃目感炮山蒂傅鼻散魂镰虏分搏俄磁捞磷频疤鳞蒂钞剐令嘛新烹冲隶玻午磊烧孤灌饱恢卯喀囊沮脾皖罗睹市丹戒顿朗彻迹恐奔且刺叭诗拉烘售藕铂驳概侮飞裤仕释蓉腾锣现浪孤颗伯色霸崇虏菏可瞧芭耿路速图匠溅谋炔傻    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "37";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

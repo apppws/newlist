@@ -8,9 +8,28 @@
     <h1>踞琳缅面侯酪嘿换饥侥</h1>
     <p>
         发表时间：2002-12-25 14:21:33 
-        浏览量： 108    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             扒的味碴踏弘归啦臀繁惶韶巧粹韩甲贫邦侮酵馈裙龚铂镁八兔炯疤唾卢旱恭弛袱薯皮伙爸敢慷磺晴呛帆健厂砷颅藏渤熬腥隶仍娘慈骄境烙匠残莽抵起首宫骚疗缝瞳内欧开录泞汤秦热瘫钒罚艾嘘盗蚕耪叮吗汐赔囱姐贤坦查惭吧丝群    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "68";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

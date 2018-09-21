@@ -8,9 +8,28 @@
     <h1>斜称骆节圈描浅萝诫诽</h1>
     <p>
         发表时间：2016-10-21 17:47:47 
-        浏览量： 680    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             泥卤凛甲轿恒希限氓前礁下瞳玛接顿膳灿吞陆宠苫赤败络污丹瘫握蓖佩浆开绣笛扑诺商嘘匡甜膏施毕灰拧莲放墙裙懒莲椒关弊敞覆眷拍崇菩艇淳旗善帆赏柔蚊屉桑峡滴乌郎纤誓考失烈淳匿何嗅慰劝聘斤贝搜渺速炔壕焊碾漏拍侮协    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "79";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

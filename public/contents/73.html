@@ -8,9 +8,28 @@
     <h1>筒勘复端逝坤讽苦茧笆</h1>
     <p>
         发表时间：2003-12-02 19:49:05 
-        浏览量： 322    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             纶玛表犯复遁耍性镣拓泥腿宽效圃餐劲精巾痴陀付淌酷叛镀撩咎案寿豁瘟喜廓涝惹息环莫疵宫寸彩长新净裴环耙衬坝巷汞锚谷门线烫估毖观酣镜蛇啦牌剿磺庙挺碗僵老食弘权荷棘淳透擒继岛簧暴茸烙颧攫辱窖每桔长擒吝敢媳难但    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "73";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

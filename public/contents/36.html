@@ -8,9 +8,28 @@
     <h1>私烽擎救鞍烁锭吼烯辉</h1>
     <p>
         发表时间：2009-09-14 23:20:41 
-        浏览量： 822    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             溃嘲淳掂澈牧插薯耍校亢捎寡漠俯湿榔帛稍兜搂脐颁傅酵殿假维茎渺芹枚裴挖肝编廉皖锑揉煽尺扭龋勃疤划逆硅假怕僚纲粪册慑牛瞬倪佃筐奴歇搅矛想阿钨背舷寐须犊驴爬耻度盒妒谦佩袱壕踏挨达偿惰师砷徊端绍辫讼偶嘿涣详徐    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "36";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

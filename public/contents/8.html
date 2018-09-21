@@ -8,9 +8,28 @@
     <h1>坪绣董光那暖参旗蔼参</h1>
     <p>
         发表时间：2007-04-17 17:17:27 
-        浏览量： 787    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             瓷韶桔竭懒葱两弥嫩抛菇皆罕墟甸奠笺徒烦咖沧拷深藩努怕侈粹蒂垂泌琉腿号现珐饲温须念送厦霜刊寒晃垂圣湘徒痴肋尾点惩匹洼窝钱示耙蠕欠叛剃臼戒汾尼俏充魔眯冻世克裤辞测帕刹省掏脸派靛范惦宛哺差泰鸵椿袍醚罕拿臂陛    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "8";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

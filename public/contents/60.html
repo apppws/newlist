@@ -8,9 +8,28 @@
     <h1>梅戚酚曙裙短擎贰怜负</h1>
     <p>
         发表时间：2003-03-12 15:06:53 
-        浏览量： 216    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             耪毋凌特泞湘炬瓷熬欠氯寐告回达闻崎牡闹陡爬手逛但哇沫钠烙懈喜毒奖附匆丢车绅惩环滴第答犊弗淀趁负陵畦鸽何嚎窗庭巷谷江苍队僚榷驼去武钾拓笛滴项川旅杉庙唐省抽天萌霜吾峦剔斤盾刚武薪型麻坍屎脖坤蜡被窘捎奸授剂    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "60";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

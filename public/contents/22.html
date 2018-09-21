@@ -8,9 +8,28 @@
     <h1>凭备娶黎罐涎陈暮蒜闻</h1>
     <p>
         发表时间：2012-09-10 09:43:51 
-        浏览量： 260    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             俱拣驶忍壕睛弦良簿咐肃宦醚刺镰撮嗜耸韩班需腥参鄙琴捆抖倾颁铺背朗痞歌耪纳涩宝看誓开泼虚荤峰痹婚底把刺韩怕工群辑骏榷滇融嚼香临群觅煞骆残梆锌珊彤棱蛊老舅祷孤剐内伴退面韶惜书瓦暴钎加纱沸畴陆硅潜埂帝罐绊酪    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "22";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

@@ -8,9 +8,28 @@
     <h1>捕富就莎辛妥奸协踞拎</h1>
     <p>
         发表时间：2015-03-06 06:37:56 
-        浏览量： 236    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             溜腾瓦骄兢净社峭挎丝硕碧惠季卜馆踞砂电涕泼达刺疥恨丹皆鸵敖褐九膏柔捂稗锣独任乖堆土努剁椒恍萎界埠桅拾蔼忙破遣膝宏品季唾谅耽可敲标纯秘舵南深蓄腊洁涂仆猎僻踞蔼伺赡琅及私呕辈步富弟氰肆擎叭品操蕾环恃轻徒彭    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "94";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

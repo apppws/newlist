@@ -8,9 +8,28 @@
     <h1>奇艇狭干海沸手亮际将</h1>
     <p>
         发表时间：2006-08-20 21:01:43 
-        浏览量： 139    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             翻隘忿斯公伸沫毯卞浑貉荡线搏舵灰峭救党昏施瓮荆的寇窜阿卧侗摩懊廉迁辟吝勿嘶梦徊参叙仕到龟狼俱覆蜡硅虐喇裁陀疚咎拱素霉细耸闺险脸侍辉虫么充敖赏哭耙难纳互甲晒估敢喀钮斯贬磕辫鲁礁垢膜本炒昧烯坊即丝劣洞米厢    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "43";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

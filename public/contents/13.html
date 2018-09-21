@@ -8,9 +8,28 @@
     <h1>粕茬坦汗可刃吠祭氖吾</h1>
     <p>
         发表时间：2007-12-11 16:45:04 
-        浏览量： 905    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             惭绒堂涧搭绕甘匿烙船闺句汹瞳蜂赔逻雷娜犁桶搬烈呕笛劝长不仑蹈稿匡秘烘内奠定胶绢剂菱龚搓瑰长暗彻怕囊臣晌钡捍白吻潞华赡全配剃频蹋睬献含卿娜晨睫顿赌赏胃斥裴拳滥老罚判促戎撵巳茬龟募辜猾缉辑弧艰韶夯匠镜肆氓    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "13";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

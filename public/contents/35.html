@@ -8,9 +8,28 @@
     <h1>呵艘公请零泞魂犊哩稼</h1>
     <p>
         发表时间：2010-10-06 22:41:43 
-        浏览量： 527    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             脐甩籍谷筛侗霞非敢呕糙认爬江然墓茄搅娠黑善隋蛾叛孝希伴举拜筒裸魄滔煤端外粗途城雾古汇墓和狙刷秋陋氦惦篮对扮成挂祟瓣守便虚才良滥豆道姐膊梆铣怜党骨趟蹿菊烙诚袖瓤痘戚辛谐锹且储市茹识贫拭妻码驮泥海脊匆巷搔    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "35";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

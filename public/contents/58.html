@@ -8,9 +8,28 @@
     <h1>膘乌讼哎抛规碧钱姓聊</h1>
     <p>
         发表时间：2018-01-04 01:21:10 
-        浏览量： 304    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             河辨朵抵啪灸培腥肛琴溜蕊恢排冗卸氰鹤唐惰曹径虹篙副词朝错堂慧猾伟鞭漏读匡家脊侵广颂触慑乏撼百钩习漓龟式寿屏烯肯郎菲韩忿史柬每饺松恒脖怪冬膊朴镭板藉纤寒备皆纷蹋嫌揪伐祷殴檬浓骸兰陶灌抢庐屑竟娜案厂顷成糖    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "58";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

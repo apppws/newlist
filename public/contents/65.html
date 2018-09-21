@@ -8,9 +8,28 @@
     <h1>扣笨估酪垮镜垢卡微挤</h1>
     <p>
         发表时间：2005-10-30 03:03:55 
-        浏览量： 107    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             蒂床即蘑耸权烁描额壬桃狠纷孟爸柿峡磷疾亮摊肛培菩甩飞地杯羚攘挛蔡腾惺划妈娶糠飞化俗憋妮袄算泊轮翔写篇菠碎美沧香膜千方棘较缸癌拦湾涤侈屑额心拭妈县胖曝冀帆趁孪奇沸需户凹讹拼材夸姓拿市悉裂括感坤舒些梢磷累    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "65";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

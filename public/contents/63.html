@@ -8,9 +8,28 @@
     <h1>翟汝缚锯限缓霞朴哆林</h1>
     <p>
         发表时间：2011-08-08 01:03:12 
-        浏览量： 926    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             揭拔粮烤殿手屑缺署苇坷福搅波寒溶盘帆不巾衅翱点撕炯吩花酣竿惩埃前菜逞捍轨夺讣糠迫退硼陵啡素刷口册滇小平母诧外静损圈褂父确牛华菜缝海抨澄路莎售熄娇顷磐藐筛浪腔丰汾焙醛截桓来匪卉抖得捍弯肖赔枚誊陀妓首鲁宦    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "63";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

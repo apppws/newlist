@@ -8,9 +8,28 @@
     <h1>潦锈判览垃哎角敬嗣碳</h1>
     <p>
         发表时间：2014-10-11 14:06:18 
-        浏览量： 804    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             憨冗风铝贯彤虏台残盯惊侯荒韧款淘媚挛恼时懈牢殿苦倒奈尼绍拒袜坏抚笔始衡醇城诺分累兰钝合娠躺精疟疽换哥犬郡访达歉诞纹搪捐丘操剔潜嗣恫磺酱普烯镐媳汰狸荷库车狄纲弟舒文胚坊肉警久掂伪擎对拎存距胯浪骑蔷景钒蕊    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "10";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

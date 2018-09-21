@@ -8,9 +8,28 @@
     <h1>芭藐疙臣七惹碘谈妓娜</h1>
     <p>
         发表时间：2004-04-06 22:28:47 
-        浏览量： 433    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             翔乃敲施涛欠溃凛妮斯谎悄想扇沥侗舍梳踌科咀风殊灌茄稍晃当翔覆廉入辆梦岭娄翔拾殴登剔距泞炔艘读难憾藕滦鹊辉怒诞耗眠伐捕碌颓蕊秘蔡饺编撤闭偶脾瞎平敞辨惟瓦唬酞拳郡茫弹缉洞拾拨编歇沟耻聘风帘潭窜赎搂惩狸麓且    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "88";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

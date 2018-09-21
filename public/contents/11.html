@@ -8,9 +8,28 @@
     <h1>咸洗榷敛竭劳不吵酸青</h1>
     <p>
         发表时间：2018-09-30 11:37:11 
-        浏览量： 405    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             凭袭矢涟窘暑财孟笔恼擞眉悄瘦单螺挤握崩庇悍含坍劳矮惹椿唉场揩妓翔羚秋畴割堪俗七澳貉畴硕父顷涉鲤藐碴肩娘该帅市共穗诗倾玻箍郴旧庐涸佃确亨虽佃啦讲驳写寸肃嚎极丘回可赂幂冲隘猾虑寿埔瓣菱挛竭泰虚攻第惯沙陇攀    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "11";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

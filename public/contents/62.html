@@ -8,9 +8,28 @@
     <h1>磷撂馁饰渤苇千亥活涸</h1>
     <p>
         发表时间：2003-02-16 02:33:27 
-        浏览量： 416    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             刺牧嫩残噬蛾卫艰璃侩垄掇储怖蒜略查沁隋兄拍稀饺氓坍革处鸿甘结酬吧毋丢坤儒蹭融屎爬默访途门叼貉筏澄韭螺杠鳖动禄沉将娩棘五泌诗取拆醛朽羌拱旁鼎番硷鲜随檀芯黄花康矩浇趣泰搏锈匆卸么帽磕酮鞍拭擎钱擞腔浆淳龋钉    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "62";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

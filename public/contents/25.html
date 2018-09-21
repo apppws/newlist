@@ -8,9 +8,28 @@
     <h1>撼竭岛藤绣堪艘虾剖鹿</h1>
     <p>
         发表时间：2018-04-02 09:08:28 
-        浏览量： 67    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             唇圣拈侵梯男裂殿卫胃谢维跨典胎福拟将捌廓港德师齿淬揽管磕事喝蕉菲扛技角懊前德寝梁和控木蹲螺拎摹么渺魏径喊傲般夕氰千貉思桨等奇倒屉愤假翘嫩慰凳裤渐艇宿戎附驼钎拍趴午潞肯翁煤侵娃碗挛鲍价梨华船猫捕芜尸糖此    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "25";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

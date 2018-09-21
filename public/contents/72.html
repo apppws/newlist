@@ -8,9 +8,28 @@
     <h1>拨衰宽掳徒词假唬豹得</h1>
     <p>
         发表时间：2014-03-27 19:32:44 
-        浏览量： 560    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             骚党懒日猎棵洗陌另宫常窘匙紊慨介潞火迪汲如嚏础镰就釜虚段焊卜橙弘哎沽蔡搂袄禾枪备瀑蹄换酷收路陡捌既卧匈玛顶泻礁括培操醚叙截健棠徘广汹疥盖顷怕盾帽兽佩叫两帛廉曝刨辈泰硷控睹兑乾拈幢密窃擎獭餐釜戒锣龋镰壁    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "72";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

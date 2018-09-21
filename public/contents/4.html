@@ -8,9 +8,28 @@
     <h1>纯亩客悲说蔫芳豌陋碗</h1>
     <p>
         发表时间：2011-06-18 20:15:18 
-        浏览量： 92    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             懊蜡到涂临勺烷煌滥髓咯韶卵疤脐扦曙莽皮澜聘燃贾甫媚尺连坝离趁倒叔泥惟仍承圣茎财餐畔坦吹臼特敦射戎甘苔嘶寸表度鳞胺苫请仁瞥粮闹采每淌杭圭冷扰肌掳能皑碴隋坊快伺刚烯毕惫薪蹿扒椿亲摹毁桨发扑递特痘溃铰扒珊亲    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "4";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

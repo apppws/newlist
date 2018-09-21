@@ -8,9 +8,28 @@
     <h1>惦七垛涤黔拿傲好然毛</h1>
     <p>
         发表时间：2008-07-01 10:35:00 
-        浏览量： 262    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             渭车喊恕绊巩抬酞识倡趴肃害犀携斧黔届钙疚夯标堵遍兽捶亩避赋览磨叉沏匿窖揩媚捌豌脊瞥柯据仙幕卡还激赡夸妮加硕两隆难勃蛋兔恍堕荒姓敲氖武施捅料控耿邵浦碾侩凯圃鲤蠢仍半汹梳怂昂贩规腊系飘读烩棚释漠搓刻亥价痢    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "38";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

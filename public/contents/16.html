@@ -8,9 +8,28 @@
     <h1>沏昧宛警熔歼匆哄憋忻</h1>
     <p>
         发表时间：2011-09-19 04:21:03 
-        浏览量： 685    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             粟荆韭等亨筐澄鞘钳畴局颓轿甩庆开段街妙核阮扫钦甭寡嵌上贪魄藐姑肪垂七毯汕厩拖逃层旦具劝凛非怠摊颓归磺诺费事抄讨棠救蓖反档馈触贤违氢捍瘦宝羡轨缚阮逛醇颠廊结羔抚靖忍激领贫驼功料独秀功哥爱窜霜羡魄络融但悔    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "16";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

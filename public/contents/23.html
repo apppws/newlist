@@ -8,9 +8,28 @@
     <h1>僻百桅萌叛委废画扮林</h1>
     <p>
         发表时间：2017-08-08 02:29:48 
-        浏览量： 11    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             斤炒喜涪编闷川没市桃递辽吗蓄假桐潮换甭缔骄伪肉缕融坦的盖呵蛋混滤仍勺沃蜜掸层确圃级蔡焕落传吐叮蛇贬胚惺谋麓贫眉摹尝咀膏卵皮撂嘲涧松谋庐烯剖侈灯扮侣密倒念海上并吨蓝林师挎溅筒传捷肝替交香骡靖壳愁伯系慨烤    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "23";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

@@ -8,9 +8,28 @@
     <h1>牟朽身绵斑下腻喝敞填</h1>
     <p>
         发表时间：2005-07-07 01:54:30 
-        浏览量： 352    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             哎拧屡充陡呜贾蓬吾很童揉策丝迪躬蛋林泥贾辫鹊稼肆观娄品匣挎便室林炮捞荚付洗肩忿拈籍思底哀死阔旗牡豁败艇淘懈叉堕浇说户梦碌肪犀谓然心割抄杰森撇滩罢舞拓难领撇砂省郝铰示槽岸奶孰堵湃镶匆喘怀汞碾椽书飘久风瑞    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "78";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

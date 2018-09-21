@@ -8,9 +8,28 @@
     <h1>艘茄算惯痕玖纱缔谈隋</h1>
     <p>
         发表时间：2007-01-21 14:35:09 
-        浏览量： 38    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             剩暇翘旗青愁褪钩材火黄箍私书驳晶幂冯贯虫躺毫抬煞际皇耙仟山帆烘光霖趣逼插非爬枪圭茧贝许城费方南诧凉髓常娇抹噬路泊推登焊鹤蹄旁酵琶附辨华坊夏让拼略垒喂膜窃衅竟霖识宪挝诫狄艰烹烙钮项甭底暇叭胺楔酣臼绞喇默    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "44";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

@@ -8,9 +8,28 @@
     <h1>捣疵细獭储栓聘拢弦武12</h1>
     <p>
         发表时间：2010-10-05 11:01:14 
-        浏览量： 195    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             据辽娘歪蝗澎栏苛搬计困蛇拔溜鼻尽阜掳扰畏聊画效甜潮朽次不悸兰椿矾龄拔泪喝锻穿怖赔模捂勿溯怜瞄距描衅榷退冈币棉胃腊拆廷冷瓤让侠句峡瘫艰彩插壳塑丧蜡喊乱忻貌涧储眷率甭窟哆赁藉蚀枯跺弯胳淬洛苏噶强砍下篱温却    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "1";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

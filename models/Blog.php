@@ -57,7 +57,7 @@ class Blog extends Base{
         ob_start();
         // 生成静态页面
         foreach($blogs as $v){
-            // var_dump($v);
+            // var_dump($v);s
             // 加载视图
             view('blog.comment',[
                 'blog'=>$v
@@ -68,6 +68,64 @@ class Blog extends Base{
             file_put_contents(ROOT."public/contents/".$v['id'].'.html',$str);
             // 清空缓冲区
             ob_clean();
+        }
+    }
+
+    // 取20条数据
+    public function indexhtml(){
+        $stmt = self::$pdo->query("SELECT * FROM blogs WHERE is_show=1 ORDER BY id DESC LIMIT 10");
+       return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    // 获取日志的浏览量
+    public function getDisplay($id){
+        // 1 设定redis key的值
+        $key = "list_{$id}";
+        // 连接redis
+        $redis = new \Predis\Client([
+            'scheme'=>'tcp',
+            'host'=>'127.0.0.1',
+            'port'=>'6379'
+        ]);
+        // 判断hash 是否有这个键  如果就操作内存 没有就从数据库中取数据
+        if($redis->hexists('list_display',$key)){
+            // 累加 并 返回添加后的值
+            $newNum = $redis->hincrby('list_display',$key,1);
+            // echo $newNum;
+            return $newNum;
+        }else{
+            // 从库中取出浏览量
+            $stmt = self::$pdo->prepare("SELECT display FROM WHERE id=?");
+            $stmt->execute([
+                $id
+            ]);
+            $display = $stmt->fetch(PDO::FETCH_COLUMN);
+            $display++;
+            // 保存到redis中
+            $redis ->hset('list_display',$key,$display);
+            return $display;
+        }
+        
+    }
+
+    // 把更新的浏览量更新到数据库中
+    public function displayToDB(){
+        // 在取出redis中保存的所有的数据
+        $redis = new \Predis\Client([
+            'scheme'=>'tcp',
+            'host'=>'127.0.0.1',
+            'port'=>'6379'
+        ]);
+        $data = $redis->hgetall('list_display');
+        // var_dump($data);
+        // 更新到数据库中
+        foreach($data as $k=>$v){
+            // echo $k;
+            $id = str_replace('list_', '', $k);
+            // echo $id;
+            $sql = "UPDATE blogs SET display={$v} WHERE id={$id}";
+            // var_dump($sql);
+            self::$pdo->exec($sql);
+
         }
     }
 

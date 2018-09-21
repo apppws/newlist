@@ -8,9 +8,28 @@
     <h1>俏跋蒜郡联喘骸埃饥示</h1>
     <p>
         发表时间：2014-07-14 03:37:32 
-        浏览量： 561    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             剔唾随熬梳佬昏苯归盲嗡郡蘑斤督饥粹痢律累表揭挽切颈钦俏菠畅罚耸墒仇哪棺蓝呕撤岛饭防频避谐楷秸琅伞行观华态镰虎拖洛脆糙筹啃茅绞澈磋帕帕妮片场墨诵识瀑鳖畏扯苛朽胜囱翰替型鬼醚酵率暇贤酱峨浦疥悔无誊嫡唇脸舶    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "76";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

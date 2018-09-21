@@ -1,7 +1,6 @@
 <?php
     namespace controllers;
     class BlogController{
-
         // 显示页面 
         public function detail(){
             // 1 接收id
@@ -184,6 +183,20 @@
         public function content_to_html(){
             $blog = new \models\Blog;
              $blog->contenthtml();
+        }
+
+        // 浏览量
+        public function display(){
+            $id = (int)$_GET['id'];
+            $blog = new \models\Blog;
+            $blog->getDisplay($id);
+        }
+
+        // 更新浏览量
+        public function displayToDB(){
+            $blog = new \models\Blog;
+            $blog->displayToDB();
+            // var_dump($c);
         }
 
     }

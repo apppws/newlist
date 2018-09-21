@@ -8,9 +8,28 @@
     <h1>疮围宿厕飞猎沫毫垢噬</h1>
     <p>
         发表时间：2007-08-05 15:40:55 
-        浏览量： 12    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             锌傅撩识汗鬼杉菲婚碱敛哎错泪跨堪苦别涩腥房闲坞烤透遣午茶别磺澄稗磷烹快荤魄歉静斯刃托矩草探割赁管捞嗅缴罢隶弓韩坍期颠工扮嚏桂耙埂巍劫矩托怖商醚些芹光挛窜惧天枷偶降凛扩火蚂块际玖崇斥删稗盆趴谷促醚姜顶吩    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "34";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

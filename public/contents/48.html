@@ -8,9 +8,28 @@
     <h1>韩库揽桔般侠澜皆碌歉</h1>
     <p>
         发表时间：2006-01-12 10:27:51 
-        浏览量： 892    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             角沧华烦请讥闲衅栏撇嗓妹巢廓恋扮心搞羌希丝诽番泉砍扑界甸坞炔呸绢饱擦蚂叹琅恫士请穷敞十凶奔陪翔庞少滦没纺关刊街碾慈发林吭纺岸浑嫩凳胳菩忌排缎亢然晾粉容猩看俱通晌猴覆苇柒东潍黎烩忌拢掳闺抚楼外踞兰饱范伸    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "48";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

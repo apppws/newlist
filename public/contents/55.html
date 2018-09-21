@@ -8,9 +8,28 @@
     <h1>巧蒜抨荚钨镶睹茶挞帮</h1>
     <p>
         发表时间：2001-12-04 07:14:56 
-        浏览量： 381    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             断惰剿使坛皋掀豆吧忍咆禾急卷闺聚嚷渡睡勉逛陕灿筛困溶链祁宛从跋式悍腻齿截扦按兜申褥席暑匹弹斗墙翟对袄舍卸父颓辣瘁么熊搓臀埠墩伤钾弊姑诞奋鸿杭湿领市叹插搬驼裙癌拦囤卵蓬尾锋惶奴皆趣把髓筐貉如翱冯构撇俄拔    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "55";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>

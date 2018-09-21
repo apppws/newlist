@@ -8,9 +8,28 @@
     <h1>累丁檬撇哺踢侠慕告辅</h1>
     <p>
         发表时间：2006-01-16 18:43:08 
-        浏览量： 567    </p>
+        浏览量:<span id="display"></span>
+    </p>
+    
+        
+    
     <div>
             悲莫澜梧饲仑袒缸喉屡稗肮秀镐褥措故鼎汀悔梗拼抒洞酵秽蜕帅潘淬闪贬备浓狗熬刀灯虱菏厦藤会舜缚犯截弥洛弄挝七拦陇交哭汗渡腊蛙盒汗昏屠菱讲擅抛廊赔细上鞍豪揪娠骄钱皆速圃凄剔刃卜羌喇豁舰局祭膏糖艾扭鞋裴冕斧舰    </div>
     
 </body>
 </html>
+<script src="/simditor-2.3.6/script/jquery.min.js"></script>
+<!-- 更新和获取浏览量 -->
+<script>
+    var id = "49";
+    var url = "/blog/display?id="+id;
+    //请求这个地址
+    $.ajax({
+        type:"GET",
+        url:url,
+        success:function(data){
+            // 把返回的浏览量 放到页面中
+            $("#display").html(data);
+        }
+    });
+</script>
