@@ -4,7 +4,8 @@ ini_set('session.save_handler','redis');  //使用redis保存session
 ini_set('session.save_path','tcp://127.0.0.1:6379?database=3');
     // 1.主入口文件  设置一个常量 
     define('ROOT', dirname(__FILE__) . '/../');
-
+    // 引入 扩展包的 自动加载
+    require(ROOT."vendor/autoload.php");
     // 2.类的自动加载
      spl_autoload_register('autoload');
      // 第二步实现自动加载
@@ -17,8 +18,7 @@ ini_set('session.save_path','tcp://127.0.0.1:6379?database=3');
                 // var_dump(ROOT .'\\'. $path . '.php');
                 require(ROOT .'\\'. $path . '.php');
         }
-        // 引入 扩展包的 自动加载
-        require(ROOT."vendor/autoload.php");
+        
     //3.加载视图函数实现
     function view($file,$data=[]){
         // 判断如果传了数据，就把数组展开成变量
@@ -90,6 +90,16 @@ ini_set('session.save_path','tcp://127.0.0.1:6379?database=3');
 
         return $ret;
     }
-    // 
+    // 7.配置文件 
+    function config($name){
+        static $config = null;
+        // 判断
+        if($config=='null'){
+            // 引入文件
+            $config = require(ROOT."config.php");
+        }
+
+        return $config[$name];
+    }
 
 ?>
